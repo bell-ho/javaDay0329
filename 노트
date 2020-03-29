@@ -1,0 +1,24 @@
+객체는 메모리에서 동적으로 생성되며 객체가 더이상 필요 없게되면 gabage collector에 의해 제거된다
+레퍼런스 생성한 객체의 주소를 변수에 저장하는 것을 레퍼런스라고 한다
+
+디폴트 생성자
+객체가 생성될때 가장 먼저 호출되는 생성자로 개발자가 명시하지 않아도 컴파일 시점에서 자동 생성된다
+
+getter setter
+멤버변수 접근제한자가 private 일때 main클래스에서 쓰지 못한다 그럴때 쓰는게 getter setter 이다
+get은 가져오는 역할 set은 셋팅해주는 역할
+
+p1.setName("이종훈"); <==이렇게 되면
+
+public void setName(String name) {	<==매개변수에 이종훈이 들어가게 되고
+		this.name = name;	<== 이종훈은 this.name에 들어가게되서 전역변수에 접근을 할수 있게된다
+}
+private String name; <===전역변수에 담겨있는 이종훈은
+
+p1.info(); <===를 통해
+
+public void info() {
+		System.out.println(name+age);
+	
+	}
+다시 뿌려지게 되는것이다
